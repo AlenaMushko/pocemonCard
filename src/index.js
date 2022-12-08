@@ -22,6 +22,7 @@ function onBtnCardClickCreateCard(e) {
   let cardPocimon = document.getElementById(id);
 
   cardPocimon.hidden = !cardPocimon.hidden;
+//   ?
   if( !cardPocimon.hidden){
   let pocimonName = e.target.id;
     refs.pokemonList.innerHTML = '';
