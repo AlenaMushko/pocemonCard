@@ -11,14 +11,15 @@ export function pocemonCard({name, sprites, height, weight, abilities}) {
   return `
  <div >
    <div class="pocemon-wrap">
-      <img class='pocemon-img'  src="${sprites.back_default}" alt="${name}" width="80"/>
-      <img class='pocemon-img'  src="${sprites.front_default}" alt="${name}" width="80"/>
+      <img class='pocemon-img'  src="${sprites.back_default}" alt="${name}" width="150"/>
+      <img class='pocemon-img'  src="${sprites.front_shiny}" alt="${name}" width="150"/>
       <p class="pocemon-title">${name}</p>
     </div>
-        <p class="pocemon-text"><span class="pocemon-span">Height:</span>${height}</p>
-        <p class="pocemon-text"><span class="pocemon-span">Weight:</span>${weight}</p>
-        <p class="pocemon-text"><span class="pocemon-span">Abilities:
-        </span>${Object.entries(...abilities)}</p>
+        <p class="pocemon-text">Height:<span class="pocemon-span">${height}m</span></p>
+        <p class="pocemon-text">Weight:<span class="pocemon-span">${weight}kg</span></p>
+        <p class="pocemon-text">Abilities:
+        <span class="pocemon-span">${Object.entries(...abilities)}
+        </span></p>
   </div>
   `
 }
