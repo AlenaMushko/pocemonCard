@@ -9,7 +9,7 @@ export function pocemonList({ name }) {
 
 export function pocemonCard({name, sprites, height, weight, abilities}) {
   return `
- <div >
+ <div class='pocemon-card'>
    <div class="pocemon-wrap">
       <img class='pocemon-img'  src="${sprites.back_default}" alt="${name}" width="150"/>
       <img class='pocemon-img'  src="${sprites.front_shiny}" alt="${name}" width="150"/>
