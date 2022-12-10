@@ -1,16 +1,13 @@
 import { getRefs } from './js/getRefs';
-import { fetchAllPokemon, fetchPokemon} from './js/pokemonAPI';
-import { createPokemonItemsMarkup} from './js/renderFunction';
-import { pocemonCard, pocemonList } from './js/templates';
+import { fetchAllPokemon, fetchPokemonCard} from './js/pokemonAPI';
+import { createPokemonItemsMarkup, createPokemonCardMarkup} from './js/renderFunction';
 
 const refs = getRefs();
 
 refs.buttonFetch.addEventListener('click', onButtonFetchClick);
 refs.pokemonList.addEventListener('click', onBtnCardClickCreateCard);
 
-console.log(refs.pokemonList);
-
-function onButtonFetchClick(evt) {
+function onButtonFetchClick() {
     fetchAllPokemon().then(({ results, count }) => {
       createPokemonItemsMarkup(results);
   }).catch(error => console.log(error));
@@ -29,22 +26,9 @@ const pocimonName = e.target.id;
 
  fetchPokemonCard(pocimonName)
   .then((results) => {
-        console.log(results);
-        const markup = pocemonCard(results);
-          refs.pocemonCard.innerHTML = markup;
+      createPokemonCardMarkup(results)       
   }).catch(error => console.log(error));
-    
-    
-console.log(pocimonName);
   }
 }
 
-function fetchPokemonCard(pocimonName) {
- return fetch('https://pokeapi.co/api/v2/pokemon/wartortle')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Упс щось пішло не так');
-        }
-        return response.json()})
-}
 

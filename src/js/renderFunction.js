@@ -9,8 +9,8 @@ export function createPokemonItemsMarkup(pokemons) {
 }
 
 
-// export function createPokemonCardMarkup(pokemon) {
-//   const markup = pocemonCard(pokemon);
-//   refs.pocemonCard.innerHTML = markup;
-// }
+export function createPokemonCardMarkup(pokemon) {
+  const markup = pocemonCard(pokemon);
+  refs.pocemonCard.innerHTML = markup;
+}
 
